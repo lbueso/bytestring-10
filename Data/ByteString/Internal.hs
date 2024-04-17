@@ -200,6 +200,8 @@ instance Monoid ByteString where
     mappend = append
     mconcat = concat
 
+instance NFData (ForeignPtr Word8)
+
 instance NFData ByteString
 
 instance Show ByteString where
