@@ -12,7 +12,7 @@
 -- Maintainer  : dons00@gmail.com, duncan@community.haskell.org
 -- Stability   : unstable
 -- Portability : non-portable
--- 
+--
 -- A module containing semi-public 'ByteString' internals. This exposes
 -- the 'ByteString' representation and low level construction functions.
 -- Modules which extend the 'ByteString' system will need to use this module
@@ -85,6 +85,9 @@ instance Eq  ByteString where
 
 instance Ord ByteString where
     compare = cmp
+
+instance Semigroup ByteString where
+  (<>) = append
 
 instance Monoid ByteString where
     mempty  = Empty
