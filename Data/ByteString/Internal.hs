@@ -200,9 +200,8 @@ instance Monoid ByteString where
     mappend = append
     mconcat = concat
 
-instance NFData (ForeignPtr Word8)
-
 instance NFData ByteString
+    rnf PS{} = ()
 
 instance Show ByteString where
     showsPrec p ps r = showsPrec p (unpackChars ps) r
