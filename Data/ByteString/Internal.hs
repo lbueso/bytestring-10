@@ -200,7 +200,7 @@ instance Monoid ByteString where
     mappend = append
     mconcat = concat
 
-instance NFData ByteString
+instance NFData ByteString where
     rnf PS{} = ()
 
 instance Show ByteString where
