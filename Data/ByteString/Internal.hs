@@ -191,6 +191,9 @@ instance Eq  ByteString where
 instance Ord ByteString where
     compare = compareBytes
 
+instance Semigroup ByteString
+    (<>) = append
+
 instance Monoid ByteString where
     mempty  = PS nullForeignPtr 0 0
     mappend = append
@@ -481,7 +484,7 @@ c2w = fromIntegral . ord
 {-# INLINE c2w #-}
 
 -- | Selects words corresponding to white-space characters in the Latin-1 range
--- ordered by frequency. 
+-- ordered by frequency.
 isSpaceWord8 :: Word8 -> Bool
 isSpaceWord8 w =
     w == 0x20 ||
@@ -521,7 +524,7 @@ inlinePerformIO = unsafePerformIO
 #endif
 
 -- ---------------------------------------------------------------------
--- 
+--
 -- Standard C functions
 --
 
