@@ -114,7 +114,7 @@ import Data.Generics            (Data(..), mkNorepType)
 
 #ifdef __GLASGOW_HASKELL__
 import GHC.Base                 (realWorld#,unsafeChr)
-import GHC.Generic
+import GHC.Generics (Generic)
 #if __GLASGOW_HASKELL__ >= 611
 import GHC.IO                   (IO(IO))
 #else
