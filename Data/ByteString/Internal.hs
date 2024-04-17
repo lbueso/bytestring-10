@@ -1,7 +1,7 @@
 {-# LANGUAGE CPP, ForeignFunctionInterface, BangPatterns #-}
 #if __GLASGOW_HASKELL__
 {-# LANGUAGE UnliftedFFITypes, MagicHash,
-            UnboxedTuples, DeriveDataTypeable #-}
+            UnboxedTuples, DeriveDataTypeable, DeriveGeneric #-}
 #endif
 {-# OPTIONS_HADDOCK hide #-}
 
@@ -182,7 +182,7 @@ data ByteString = PS {-# UNPACK #-} !(ForeignPtr Word8) -- payload
                      {-# UNPACK #-} !Int                -- length
 
 #if defined(__GLASGOW_HASKELL__)
-    deriving (Typeable)
+    deriving (Typeable, Generic)
 #endif
 
 instance Eq  ByteString where
