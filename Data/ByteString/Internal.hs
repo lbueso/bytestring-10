@@ -191,7 +191,7 @@ instance Eq  ByteString where
 instance Ord ByteString where
     compare = compareBytes
 
-instance Semigroup ByteString
+instance Semigroup ByteString where
     (<>) = append
 
 instance Monoid ByteString where
