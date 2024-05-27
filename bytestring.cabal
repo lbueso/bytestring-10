@@ -1,4 +1,4 @@
-Name:                mybytestring
+Name:                bytestring
 Version:             0.10.0.0
 Synopsis:            Fast, compact, strict and lazy byte strings with a list interface
 Description:
